@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-Montserrat  overflow-x-hidden;
+  }
+  .container {
+    @apply max-w-[1600px] w-full px-4 mx-auto;
+  }
+  h1 {
+    @apply text-[90px];
+  }
+  h2 {
+    @apply text-[33px];
+  }
+  h3 {
+    @apply text-[24px];
+  }
+  h4 {
+    @apply text-[16px];
+  }
+  h5 {
+    @apply text-[12px];
+  }
+  h6 {
+    @apply text-[19px];
+  }
+  p {
+    @apply text-[16px];
+  }
+}
+
+@layer components {
+  .header__nav li.active {
+    @apply text-primary border-primary
+     border-b-4 border-primary
+    ;
+  }
+
+  /* HEADER */
+  .header__nav li a {
+    @apply hover:text-primary border-primary
+    ;
+  }
+  .header__nav li a.active {
+    @apply text-primary border-primary border-b-4 pb-5;
+    ;
+  }
+  .header__nav.open {
+    @apply right-0 z-50 overflow-y-hidden bg-ramenText;
+  }
+  .toggle__menu {
+    @apply flex flex-col gap-1 z-50 lg:hidden;
+  }
+  .toggle__menu span {
+    @apply content-[*] bg-primary border-primary
+     w-10 h-2 rounded duration-700;
+  }
+  .toggle__menu span:nth-child(2) {
+    @apply content-[*] bg-primary w-10  h-2 rounded duration-700;
+  }
+  .toggle__menu span:last-child {
+    @apply content-[*] bg-primary border-primary
+     w-10  h-2 rounded duration-700;
+  }
+  .toggle__menu.open span:first-child {
+    @apply rotate-[310deg] bg-primary border-primary
+     w-10  translate-x-1 translate-y-4;
+  }
+  .toggle__menu.open span:nth-child(2) {
+    @apply rotate-[-310deg] w-10 bg-primary border-primary
+      translate-x-1 translate-y-1;
+  }
+  .toggle__menu.open span:last-child {
+    @apply rotate-[-255deg] w-10 opacity-0 bg-primary ;
+  }
+
+  /* ORDER MICHI */
+
+  .ramen__list p {
+    @apply lg:text-[20px];
+  }
+  .ramen__list {
+    @apply lg:grid lg:grid-cols-2 grid grid-cols-2;
+  }
+  .ramen__list p {
+    @apply text-great font-semibold;
+  }
+  .ramen__list h3 {
+    @apply font-Economica font-semibold text-ramenText;
+  }
+  .ramen__list li {
+    @apply text-white;
+  }
+  .ramen__list h4 {
+    @apply text-ramenText font-semibold;
+  }
+  .pick__img img {
+    @apply h-[5rem];
+  }
+
+  /* contact */
+  /* toppings */
+
+  .noodles__text p {
+    @apply font-bold text-ramenText;
+  }
+  .noodles__cards {
+    @apply lg:flex lg:justify-between flex justify-between;
+  }
+
+  /* sides */
+  .sides__cards {
+    @apply lg:flex lg:justify-between  flex justify-between;
+  }
+  .sides__text p {
+    @apply font-semibold text-ramenText;
+  }
+  .sides__price p {
+    @apply font-semibold;
+  }
+
+  /* DRINKS */
+  .beer__details.active h3{
+    @apply text-primary border-primary border-b-4 pb-5 cursor-pointer;
+  }
+  .leftcards {
+    @apply lg:flex lg:justify-between flex justify-between;
+  }
+  .rightcards {
+    @apply lg:flex lg:justify-between flex justify-between;
+  }
+  .menuleft--title {
+    @apply lg:flex lg:justify-center;
+  }
+  .leftcards p {
+    @apply font-semibold text-ramenText;
+  }
+  .rightcards p {
+    @apply font-semibold text-ramenText;
+  }
+  .menuleft {
+    @apply lg:flex lg:flex-col lg:gap-5 flex flex-col gap-5;
+  }
+  .menuright {
+    @apply lg:flex lg:flex-col lg:gap-5 flex flex-col gap-5;
+  }
+  .menu__wrapper{
+    @apply  grid grid-cols-2 gap-5;
+  }
+  .menu__wrapper{
+    @apply hidden lg:hidden;
+  }
+  .menu__wrapper.active{
+    @apply block  lg:grid lg:grid-cols-2;
+  }
+
+  /* BEEr */
+  .beer__menu li.active {
+    @apply text-primary
+     border-b-4 border-primary
+    ;
+  }
+
+  /* BUTTON */
+  .btn {
+    @apply py-2 px-4 bg-transparent  rounded shadow-[0_8px_24px_-15px_rgba(149,157,165,0.2)];
+  }
+
+  .btn.bg-primaryy {
+    @apply bg-primary border-primary
+     text-white font-semibold
+    hover:text-white hover:bg-transparent;
+  }
+  .btn.bg-secondary {
+    @apply bg-ramenText text-white font-semibold;
+  }
+
+
+.drinksType li.active {
+    @apply text-primary border-b-4 border-primary;
+  }
+  .drinkGroup.active {
+    @apply grid grid-cols-2 gap-16;
+  }
+
+
+}
+/* *{
+  border: 1px solid red;
+} */
